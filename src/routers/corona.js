@@ -4,6 +4,16 @@ import Corona from "../models/corona";
 
 const router = express.Router();
 
+router.get("/api/peru", async (req, res) => {
+  try {
+    const API = new Corona();
+    const data = await API.peru();
+    res.send(data);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
 router.get("/api/countries", async (req, res) => {
   try {
     const API = new Corona();

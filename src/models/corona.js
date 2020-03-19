@@ -19,6 +19,16 @@ class Corona {
       throw new Error(error);
     }
   }
+
+  async peru() {
+    try {
+      const data = await db.fetch("peru");
+      return data;
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
+
 }
 
 export default Corona;
